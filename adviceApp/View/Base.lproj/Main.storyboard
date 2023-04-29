@@ -8,11 +8,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Advice View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="adviceApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="BYZ-38-t0r" customClass="AdviceViewController" customModule="adviceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="AdviceView" customModule="adviceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -32,10 +32,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OQy-kc-4hS" secondAttribute="trailing" constant="16" id="nU8-4o-fL1"/>
                             <constraint firstItem="OQy-kc-4hS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rg5-Jb-4MT"/>
                         </constraints>
+                        <connections>
+                            <outlet property="adviceLabel" destination="OQy-kc-4hS" id="4hl-mS-wg6"/>
+                        </connections>
                     </view>
-                    <connections>
-                        <outlet property="adviceLabel" destination="OQy-kc-4hS" id="Fex-7L-k7g"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

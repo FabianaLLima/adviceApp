@@ -7,9 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
-    @IBOutlet weak var adviceLabel: UILabel!
+class AdviceViewController: UIViewController {
+
+    var mainView: AdviceView {
+        guard let mainView = view as? AdviceView else {
+            fatalError(" não foi possível fazer o cast de UIView para adviceView")
+        }
+        return mainView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +24,9 @@ class ViewController: UIViewController {
             if let data = data,
                let httpResponse = response as? HTTPURLResponse,
                httpResponse.statusCode == 200 {
-                let model = try! JSONDecoder().decode(Model.self, from: data)
+                let model = try! JSONDecoder().decode(Advice.self, from: data)
                 DispatchQueue.main.sync {
-                    self.adviceLabel.text = model.slip.advice
+                    self.mainView.adviceLabel.text = model.slip.advice
                 }
             } else if let error = error {
                 print("Something went wrong")
@@ -32,11 +37,4 @@ class ViewController: UIViewController {
     }
 }
 
-struct Model: Decodable {
-    let slip: Slip
-}
 
-struct Slip: Decodable {
-    let id: Int
-    let advice: String
-}
