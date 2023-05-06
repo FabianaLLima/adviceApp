@@ -16,25 +16,22 @@ class AdviceViewController: UIViewController {
         return mainView
     }
     
+    let network = NetworkAdvice()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        guard let url = URL(string: "https://api.adviceslip.com/advice") else { return }
-        let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let data = data,
-               let httpResponse = response as? HTTPURLResponse,
-               httpResponse.statusCode == 200 {
-                let model = try! JSONDecoder().decode(Advice.self, from: data)
-                DispatchQueue.main.sync {
-                    self.mainView.adviceLabel.text = model.slip.advice
+    
+        network.getAdvice(completion: { result in
+            DispatchQueue.main.sync {
+                switch result {
+                case .success(let advice):
+                    self.mainView.adviceLabel.text = advice.slip.advice
+                case .failure(_):
+                    break
                 }
-            } else if let error = error {
-                print("Something went wrong")
             }
-        }
-        
-        dataTask.resume()
+        })
     }
 }
-
-
+      
+ 

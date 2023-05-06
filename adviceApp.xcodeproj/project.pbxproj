@@ -15,6 +15,7 @@
 		FE37736729A42AC60054A752 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE37736529A42AC60054A752 /* Main.storyboard */; };
 		FE37736929A42AC80054A752 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE37736829A42AC80054A752 /* Assets.xcassets */; };
 		FE37736C29A42AC80054A752 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE37736A29A42AC80054A752 /* LaunchScreen.storyboard */; };
+		FEE260B82A06D08C00FA067D /* NetworkAdvice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE260B72A06D08C00FA067D /* NetworkAdvice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FE37736829A42AC80054A752 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE37736B29A42AC80054A752 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE37736D29A42AC80054A752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEE260B72A06D08C00FA067D /* NetworkAdvice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAdvice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		FE37735E29A42AC60054A752 /* adviceApp */ = {
 			isa = PBXGroup;
 			children = (
+				FEE260B62A06D04A00FA067D /* NetworkAdvice */,
 				FE08413629D88C4E00075F15 /* Model */,
 				FE08413129D88BB700075F15 /* AppDelegate */,
 				FE08413329D88BCA00075F15 /* Controller */,
@@ -103,6 +106,14 @@
 				FE37736D29A42AC80054A752 /* Info.plist */,
 			);
 			path = adviceApp;
+			sourceTree = "<group>";
+		};
+		FEE260B62A06D04A00FA067D /* NetworkAdvice */ = {
+			isa = PBXGroup;
+			children = (
+				FEE260B72A06D08C00FA067D /* NetworkAdvice.swift */,
+			);
+			path = NetworkAdvice;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +188,7 @@
 			files = (
 				FE37736429A42AC60054A752 /* AdviceViewController.swift in Sources */,
 				FE37736029A42AC60054A752 /* AppDelegate.swift in Sources */,
+				FEE260B82A06D08C00FA067D /* NetworkAdvice.swift in Sources */,
 				FE37736229A42AC60054A752 /* SceneDelegate.swift in Sources */,
 				FE08413D29D8A01200075F15 /* AdviceView.swift in Sources */,
 				FE08413829D88CA400075F15 /* Advice.swift in Sources */,
